@@ -153,13 +153,13 @@ class EasyLoadingContainerState extends State<EasyLoadingContainer>
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
-                          color: _maskColor,
+                          // color: _maskColor,
                         ),
                       )
                     : Container(
                         width: double.infinity,
                         height: double.infinity,
-                        color: _maskColor,
+                        // color: _maskColor,
                       ),
               ),
             );
