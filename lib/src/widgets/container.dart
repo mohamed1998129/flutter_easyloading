@@ -142,28 +142,22 @@ class EasyLoadingContainerState extends State<EasyLoadingContainer>
         AnimatedBuilder(
           animation: _animationController,
           builder: (BuildContext context, Widget? child) {
-            return Opacity(
-              opacity: _animationController.value,
-              child: IgnorePointer(
-                ignoring: _ignoring,
-                child: _dismissOnTap
-                    ? GestureDetector(
-                        onTap: _onTap,
-                        behavior: HitTestBehavior.translucent,
-                        child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          // color: _maskColor,
-                          color: Colors.transparent,
-                        ),
-                      )
-                    : Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        // color: _maskColor,
-                        color: Colors.transparent,
-                      ),
+            return _dismissOnTap
+                ? GestureDetector(
+              onTap: _onTap,
+              behavior: HitTestBehavior.translucent,
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                // color: _maskColor,
+                color: Colors.transparent,
               ),
+            )
+                : Container(
+              width: double.infinity,
+              height: double.infinity,
+              // color: _maskColor,
+              color: Colors.transparent,
             );
           },
         ),
@@ -196,40 +190,24 @@ class _Indicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(50.0),
-      decoration: BoxDecoration(
-        color: EasyLoadingTheme.backgroundColor,
-        borderRadius: BorderRadius.circular(
-          EasyLoadingTheme.radius,
-        ),
-        boxShadow: EasyLoadingTheme.boxShadow,
-      ),
-      padding: EasyLoadingTheme.contentPadding,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          if (indicator != null)
-            Container(
-              margin: status?.isNotEmpty == true
-                  ? EasyLoadingTheme.textPadding
-                  : EdgeInsets.zero,
-              child: indicator,
-            ),
-          if (status != null)
-            Text(
-              status!,
-              style: EasyLoadingTheme.textStyle ??
-                  TextStyle(
-                    color: EasyLoadingTheme.textColor,
-                    fontSize: EasyLoadingTheme.fontSize,
-                  ),
-              textAlign: EasyLoadingTheme.textAlign,
-            ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        if (indicator != null)
+          indicator??SizedBox(),
+        if (status != null)
+          Text(
+            status!,
+            style: EasyLoadingTheme.textStyle ??
+                TextStyle(
+                  color: EasyLoadingTheme.textColor,
+                  fontSize: EasyLoadingTheme.fontSize,
+                ),
+            textAlign: EasyLoadingTheme.textAlign,
+          ),
+      ],
     );
   }
 }

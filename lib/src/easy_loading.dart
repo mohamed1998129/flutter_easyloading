@@ -209,7 +209,7 @@ class EasyLoading {
 
   EasyLoading._internal() {
     /// set deafult value
-    loadingStyle = EasyLoadingStyle.dark;
+    loadingStyle = EasyLoadingStyle.custom;
     indicatorType = EasyLoadingIndicatorType.fadingCircle;
     maskType = EasyLoadingMaskType.none;
     toastPosition = EasyLoadingToastPosition.center;

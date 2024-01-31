@@ -47,17 +47,13 @@ class EasyLoadingTheme {
 
   /// background color of loading
   static Color get backgroundColor =>
-      EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ? Colors.transparent
-          : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.transparent
-              : Colors.transparent;
+      Colors.transparent;
 
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ? null
-          : null;
+          ? []
+          :  [];
 
   /// font color of status
   static Color get textColor =>
