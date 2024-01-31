@@ -46,12 +46,17 @@ class EasyLoadingTheme {
               : Colors.transparent;
 
   /// background color of loading
-  static Color get backgroundColor =>Colors.transparent;
+  static Color get backgroundColor =>
+      EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
+          ? EasyLoading.instance.backgroundColor!
+          : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
+              ? Colors.transparent
+              : Colors.transparent;
 
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ? null
+          ? EasyLoading.instance.boxShadow ?? [BoxShadow()]
           : null;
 
   /// font color of status
@@ -66,7 +71,7 @@ class EasyLoadingTheme {
   static Color maskColor(EasyLoadingMaskType? maskType) {
     maskType ??= EasyLoading.instance.maskType;
     return maskType == EasyLoadingMaskType.custom
-        ? EasyLoading.instance.maskColor!
+        ?  Colors.transparent
         : maskType == EasyLoadingMaskType.black
             ? Colors.transparent
             : Colors.transparent;
