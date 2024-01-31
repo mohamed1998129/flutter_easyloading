@@ -34,24 +34,24 @@ class EasyLoadingTheme {
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
           ? EasyLoading.instance.indicatorColor!
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.white
-              : Colors.black;
+              ? Colors.transparent
+              : Colors.transparent;
 
   /// progress color of loading
   static Color get progressColor =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
           ? EasyLoading.instance.progressColor!
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.white
-              : Colors.black;
+              ? Colors.transparent
+              : Colors.transparent;
 
   /// background color of loading
   static Color get backgroundColor =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
           ? EasyLoading.instance.backgroundColor!
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.black.withOpacity(0.9)
-              : Colors.white;
+              ? Colors.transparent
+              : Colors.transparent;
 
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
@@ -64,8 +64,8 @@ class EasyLoadingTheme {
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
           ? EasyLoading.instance.textColor!
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.white
-              : Colors.black;
+              ? Colors.transparent
+              : Colors.transparent;
 
   /// mask color of loading
   static Color maskColor(EasyLoadingMaskType? maskType) {
@@ -73,7 +73,7 @@ class EasyLoadingTheme {
     return maskType == EasyLoadingMaskType.custom
         ? EasyLoading.instance.maskColor!
         : maskType == EasyLoadingMaskType.black
-            ? Colors.black.withOpacity(0.5)
+            ? Colors.transparent
             : Colors.transparent;
   }
 
