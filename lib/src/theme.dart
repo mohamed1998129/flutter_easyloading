@@ -48,7 +48,7 @@ class EasyLoadingTheme {
   /// background color of loading
   static Color get backgroundColor =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ? EasyLoading.instance.backgroundColor!
+          ?Colors.transparent
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
               ? Colors.transparent
               : Colors.transparent;
