@@ -154,12 +154,14 @@ class EasyLoadingContainerState extends State<EasyLoadingContainer>
                           width: double.infinity,
                           height: double.infinity,
                           // color: _maskColor,
+                          color: Colors.transparent,
                         ),
                       )
                     : Container(
                         width: double.infinity,
                         height: double.infinity,
                         // color: _maskColor,
+                        color: Colors.transparent,
                       ),
               ),
             );
