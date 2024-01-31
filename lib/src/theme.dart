@@ -56,7 +56,7 @@ class EasyLoadingTheme {
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ? EasyLoading.instance.boxShadow ?? [BoxShadow()]
+          ? null
           : null;
 
   /// font color of status
@@ -71,7 +71,7 @@ class EasyLoadingTheme {
   static Color maskColor(EasyLoadingMaskType? maskType) {
     maskType ??= EasyLoading.instance.maskType;
     return maskType == EasyLoadingMaskType.custom
-        ?  Colors.transparent
+        ? EasyLoading.instance.maskColor!
         : maskType == EasyLoadingMaskType.black
             ? Colors.transparent
             : Colors.transparent;
