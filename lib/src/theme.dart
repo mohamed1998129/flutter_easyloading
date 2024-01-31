@@ -46,12 +46,7 @@ class EasyLoadingTheme {
               : Colors.transparent;
 
   /// background color of loading
-  static Color get backgroundColor =>
-      EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
-          ?Colors.transparent
-          : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.transparent
-              : Colors.transparent;
+  static Color get backgroundColor =>Colors.transparent;
 
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
